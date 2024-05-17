@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/mvctut-0.0.1-SNAPSHOT.jar mvctut.jar
+COPY --from=build /target/TwoStepVerification-0.0.1-SNAPSHOT.jar TwoStepVerification.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "mvctut.jar"]
+ENTRYPOINT ["java", "-jar", "TwoStepVerification.jar"]
